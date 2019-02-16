@@ -20,6 +20,7 @@ This is my version of the Item Catalog Application in which a list of items with
 3. Download and place the project files into a folder in your shared Vagrant sub-directory and navigate to that folder.
 4. Use the PostgreSQL command line program to create a database named itemcatalog. First run `$ psql` to open up the command line program and then `$ CREATE DATABASE itemcatalog;` to create the database that the application will connect to. After that exit psql by running `\q`.
 5. Setup the app's database by running `$ python database_setup.py` from your vagrant sub-directory using Python.
-6. Run the app's script from your vagrant sub-directory using Python: `$ python main.py` and *create a user* using the app's login methods.
-7. After creating a user fill the database with the necessary data(categories and category items) by closing the running application, then running `$ python fill_database.py`.
-8. Restart the application with `$ python main.py`. Everything is set.
+6. Run the app's script from your vagrant sub-directory using Python: `$ python main.py`.
+7. Open up your browser, navigate to _http://localhost:5000/_ and *create a user* using the app's login methods.
+8. After creating a user fill the database with the necessary data(categories and category items) by closing the running application in your terminal and then running `$ python fill_database.py`.
+9. Restart the application with `$ python main.py`. Everything is set.
