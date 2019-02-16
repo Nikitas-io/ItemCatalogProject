@@ -1,6 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
+from sqlalchemy.orm import relationship, backref
 from sqlalchemy import create_engine
 
 BASE = declarative_base()
@@ -50,9 +50,10 @@ class CategoryItems(BASE):
     name = Column(String(80), nullable=False)
     content = Column(String(250), nullable=False)
     category_id = Column(Integer, ForeignKey('categories.id'))
-    category = relationship(Categories, cascade="all, delete-orphan")
+    category = relationship(Categories, backref=backref('category_items',
+                                                        cascade='all, delete'))
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
-    user = relationship(Users, cascade="save-update")
+    user = relationship(Users, backref="category_items")
     date_time = Column(DateTime, nullable=False)
 
     @property
