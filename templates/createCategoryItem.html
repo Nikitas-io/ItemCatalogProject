@@ -45,11 +45,11 @@
     <!-- Create new item form -->
     <form action="{{ url_for('createCategoryItem', category_name=category_name) }}" method="POST">
       <label for="name">Name:</label>
-			<input class="form-field" name="name" type ="text" placeholder="Name" maxlength="30" />
+			<input class="form-field" name="name" type ="text" placeholder="Name" maxlength="30" required />
       <br />
 
 			<label for="content">Description:</label>
-			<textarea class="form-field"  name="content" placeholder="Describe the item..." rows="5" maxlength="300"></textarea>
+			<textarea class="form-field"  name="content" placeholder="Describe the item..." rows="5" maxlength="300" required></textarea>
       <br />
 
 			<input type="submit" id="submitItem" value="Submit" />
