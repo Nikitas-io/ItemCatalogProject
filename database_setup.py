@@ -53,7 +53,7 @@ class CategoryItems(BASE):
     category = relationship(Categories, backref=backref('category_items',
                                                         cascade='all, delete'))
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
-    user = relationship(Users, backref="category_items")
+    user = relationship(Users, backref='category_items')
     date_time = Column(DateTime, nullable=False)
 
     @property
