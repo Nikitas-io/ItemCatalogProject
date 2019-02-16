@@ -25,3 +25,11 @@ This is my version of the Item Catalog Application in which a list of items with
 7. Open up your browser, navigate to _http://localhost:5000/_ and *create a user* using the app's login methods.
 8. After creating a user fill the database with the necessary data(categories and category items) by closing the running application in your terminal and then running `$ python fill_database.py`.
 9. Restart the application with `$ python main.py`. Everything is set.
+
+## API Endpoint instructions
+- To get all user data use the URL: `/users/JSON`
+- To get specific user data (If the username contains spaces use the URL encoding for space, which is %20) use the URL: `/users/<user_name>/JSON`.
+- To get all category data use the URL: `/categories/JSON`.
+- To get a specific category use the URL: `/categories/<category_name>/JSON`.
+- To get all item data use the URL: `/items/JSON`
+- To get specific item data use the URL: `/items/<item_name>/<item_id>/JSON`.
