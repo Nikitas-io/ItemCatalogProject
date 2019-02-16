@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Catalog Items</title>
+    <meta name="description" content="A list of all the items that belong to this catalog.">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="author" content="Nikitas Chatzipazarlis">
+    <link rel="icon" type="image/ico" href="{{ url_for('static',filename='images/favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+  <div id="top-bar">
+    <h1>Item Catalog Project</h1>
+    <nav id="top-nav">
+      <!-- Link to take you back to the home page -->
+      <a href="{{url_for('home')}}">Home</a>
+      <!-- If the user is already logged in, then show logout option -->
+      {% if 'username' in session %}
+      <a href="{{url_for('logout')}}">Logout </a>
+      <!-- If the user is not loged in, show the login option -->
+      {% else %}
+      <a href="{{url_for('login')}}">Login </a>
+      {% endif %}
+    </nav>
+  </div>
+
+  <div id="container">
+  <section class="category-section">
+    <h2>Categories</h2>
+    <ul>
+    {% for category in categories %}
+        <li><a href="{{url_for('categoryItems', category_name=category.name)}}">
+            {{category.name}}</a>
+        </li>
+    {% endfor %}
+    </ul>
+  </section>
+  <section class="item-section">
+    <h2>{{selectedCategory.name}} Items ({{totalItems}} items)</h2>
+    <ul>
+    {% for item in items %}
+      <li><a href="{{url_for('viewItem', category_name=item.category.name, item_name=item.name, item_id=item.id)}}">
+          {{item.name}}</a>
+    {% endfor %}
+    </ul>
+    <a href="{{url_for('createCategoryItem', category_name=selectedCategory.name)}}">Create {{selectedCategory.name}} Item</a>
+  </section>
+</body>
+</html>

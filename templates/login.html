@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Item Catalog Login</title>
+    <meta name="description" content="Login to the application.">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="author" content="Nikitas Chatzipazarlis">
+    <link rel="icon" type="image/ico" href="{{ url_for('static',filename='images/favicon.ico') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+
+    <!-- Google+ Sign in dependencie.s -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script src="//apis.google.com/js/platform.js?onload=start"> </script>
+
+</head>
+<body>
+  <div id="top-bar">
+    <h1>Item Catalog Project</h1>
+    <nav id="top-nav">
+      <!-- Link to take you back to the home page -->
+      <a href="{{url_for('home')}}">Home</a>
+      <!-- If the user is already logged in, then show logout option -->
+      {% if 'username' in session %}
+      <a href="{{url_for('logout')}}">Logout </a>
+      <!-- If the user is not loged in, show the login option -->
+      {% else %}
+      <a href="{{url_for('login')}}">Login </a>
+      {% endif %}
+    </nav>
+  </div>
+
+  <!-- Google+ Sign in button. -->
+  <div id="googleSigninButton" data-state={{STATE}}>
+      <span class="g-signin"
+          data-scope="openid email"
+          data-clientid="1095957210432-8ilchhpmsi2d4btajieggt4r52udv1bp.apps.googleusercontent.com"
+          data-redirecturi="postmessage"
+          data-accesstype="offline"
+          data-cookiepolicy="single_host_origin"
+          data-callback="signInCallback"
+          data-approvalprompt="force">
+      </span>
+  </div>
+
+  <!-- Facebook Sign in button. -->
+  <button id="facebookSigninButton" datadata-state={{STATE}}>
+  	<!-- Set the scope of authorization that the app wants to request -->
+  	<!-- When the button is clikced, the sendTokenToServer() method is invoked -->
+  	<fb:login-button scope="public_profile,email" onlogin="sendTokenToServer();">
+  		<!-- You can write whatever you want inside the Facebook button here -->
+  		<a href='javascript:sendTokenToServer()'>Login with Facebook</a>
+  	</fb:login-button>
+  </button>
+
+  <!-- We populate this div with the response method's results -->
+  <div id="result"></div>
+
+  <!-- Sign-in scripts. -->
+  <script src="{{url_for('static', filename='js/googleSignIn.js')}}"> </script>
+  <script src="{{url_for('static', filename='js/facebookSignIn.js')}}"> </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Create Item</title>
+  <meta name="description" content="Create an item for any category.">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="author" content="Nikitas Chatzipazarlis">
+  <link rel="icon" type="image/ico" href="{{ url_for('static',filename='images/favicon.ico') }}" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+  <div id="top-bar">
+    <h1>Item Catalog Project</h1>
+    <nav id="top-nav">
+      <!-- Link to take you back to the home page -->
+      <a href="{{url_for('home')}}">Home</a>
+      <!-- If the user is already logged in, then show logout option -->
+      {% if 'username' in session %}
+      <a href="{{url_for('logout')}}">Logout </a>
+      <!-- If the user is not loged in, show the login option -->
+      {% else %}
+      <a href="{{url_for('login')}}">Login </a>
+      {% endif %}
+    </nav>
+  </div>
+
+  <!-- Flash messages -->
+  <div class = 'flash'>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+  </div>
+
+  <div id="form-container">
+    <h2>Create an item for any category.</h2>
+    <!-- Create new item form -->
+    <form action="{{url_for('createItem')}}" method="POST">
+      <label for="name">Name:</label>
+			<input class="form-field" name="name" type ="text" placeholder="Name" maxlength="30" />
+      <br />
+
+			<label for="content">Description:</label>
+			<textarea class="form-field"  name="content" placeholder="Describe the item..." rows="5" maxlength="300"></textarea>
+      <br />
+
+			<label for="category">Category:</label>
+      <select class="form-field" name="category">
+        <option value="Meat">Meat</option>
+        <option value="Fruits">Fruits</option>
+        <option value="Vegetables">Vegetables</option>
+      </select>
+      <br />
+
+			<input type="submit" id="submitItem" value="Submit" />
+		</form>
+  </div>
+
+  </body>
+  </html>
