@@ -14,6 +14,7 @@ This is my version of the Item Catalog Application in which a list of items with
   - A version of Python (at least 2.7 and above).
   - The [Vagrant](https://www.vagrantup.com/) tool for building and managing virtual machine environments.
   - Linux on the [VirtualBox](https://www.virtualbox.org/) Virtual Machine.
+  - Download and place this [Vagrantfile](https://github.com/udacity/fullstack-nanodegree-vm/tree/master/vagrant) in your vagrant directory.
 2. Run the Virtual Machine:
   - Launch the Vagrant Virtual Machine inside your shared Vagrant sub-directory by running: `$ vagrant up`
   - Then ssh using this command: `$ vagrant ssh`.

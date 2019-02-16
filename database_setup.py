@@ -50,9 +50,9 @@ class CategoryItems(BASE):
     name = Column(String(80), nullable=False)
     content = Column(String(250), nullable=False)
     category_id = Column(Integer, ForeignKey('categories.id'))
-    category = relationship(Categories)
+    category = relationship(Categories, cascade="all, delete-orphan")
     user_id = Column(Integer, ForeignKey('users.id'), nullable=False)
-    user = relationship(Users)
+    user = relationship(Users, cascade="save-update")
     date_time = Column(DateTime, nullable=False)
 
     @property

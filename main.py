@@ -577,11 +577,11 @@ def items_json():
     return jsonify(Items=[i.serialize for i in items])
 
 
-# Get specific item data.
+# Get specific item data. It is necessary that you specify an existing item.
 @app.route('/items/<item_name>/<item_id>/JSON')
 @app.route('/items/<item_name>/<item_id>/JSON/')
 def item_json(item_id):
-    item = session.query(CategoryItems).filter_by(name=item_id).one()
+    item = session.query(CategoryItems).filter_by(id=item_id).one()
     return jsonify(Item=item.serialize)
 
 
