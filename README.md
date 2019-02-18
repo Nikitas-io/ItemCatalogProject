@@ -3,7 +3,7 @@ This is my simple Item Catalog Application in which a list of items within a var
 
 ## Outside Dependencies
 - This RESTful web application uses the Python Flask framework.
-- I implemented [Google's](https://classroom.udacity.com/nanodegrees/nd004/parts/4dcefa2a-fb54-4909-9708-9ef2839e5340/modules/5dbcf44d-760d-49d4-9055-b6a0a48e5454/lessons/3967218625/concepts/39518891870923) and [Facebook's](https://classroom.udacity.com/nanodegrees/nd004/parts/4dcefa2a-fb54-4909-9708-9ef2839e5340/modules/5dbcf44d-760d-49d4-9055-b6a0a48e5454/lessons/3951228603/concepts/39497787730923) OAuth APIs that were taught in class using the notes that I've kept.
+- I implemented [Google's](https://classroom.udacity.com/nanodegrees/nd004/parts/4dcefa2a-fb54-4909-9708-9ef2839e5340/modules/5dbcf44d-760d-49d4-9055-b6a0a48e5454/lessons/3967218625/concepts/39518891870923) and [Facebook's](https://classroom.udacity.com/nanodegrees/nd004/parts/4dcefa2a-fb54-4909-9708-9ef2839e5340/modules/5dbcf44d-760d-49d4-9055-b6a0a48e5454/lessons/3951228603/concepts/39497787730923) OAuth APIs.
 - I used the SQLAlchemy ORM (Object Relational Mapper) to send off requests written in Python (the code is transformed by the ORM into SQL) to the database, and then get the results from the SQL statements and use them as objects from within my Python code.
 - I also used the jQuery library to make ajax request to the third party servers.
 - Favicon is from [iconfinder](https://www.iconfinder.com/icons/1519787/catalog_color_guide_colorful_office_school_icon).
