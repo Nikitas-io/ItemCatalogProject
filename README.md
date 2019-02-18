@@ -1,5 +1,5 @@
-# Item Catalog Project for Udacity
-This is my version of the Item Catalog Application in which a list of items within a variety of categories as well as provide a user registration and authentication system are provided. Registered users have the ability to post, edit and delete their own items.
+# Item Catalog Project
+This is my a simple Item Catalog Application in which a list of items within a variety of categories as well a user registration and authentication system are provided. Registered users have the ability to post, edit and delete their own items.
 
 ## Outside Dependencies
 - This RESTful web application uses the Python Flask framework.
