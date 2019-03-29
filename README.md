@@ -1,5 +1,5 @@
 # Item Catalog Project
-This is my simple Item Catalog Application in which a list of items within a variety of categories as well a user registration and authentication system are provided. Registered users have the ability to post, edit and delete their own items.
+This is a simple Item Catalog Application project I made with Python, Flask and SQLAlchemy. A list of items within a variety of categories and a user registration/authentication system are provided. Registered users have the ability to post, edit and delete their own items, while non-registered users can simply browse the application.
 
 ## Outside Dependencies
 - This RESTful web application uses the Python Flask framework.
